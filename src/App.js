@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-
-import pic from './img/me.jpg';
-import { CalculatorStyles } from './components/styles/Styles';
+import Calculator from './components/Calculator';
+import NumberProvider from './components/NumberProvider';
 
 // const App = () => <h1>Hello, World! <img src={pic} alt="image"/></h1> ;
 
@@ -15,10 +14,9 @@ const App = () => {
 	const [name, setName] = useState(' World!');
 	return (
 		<div className="App">
-			<h1>Hello, {name}! <img src={pic} alt="image"/></h1>
-			<button onClick={() => setName('Kenny')}>
-                Click me to change name
-			</button>
+			<NumberProvider>
+				<Calculator />
+			</NumberProvider>
 		</div>
 	);
 };
